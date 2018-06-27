@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -37,6 +37,7 @@
 
         #main_Menu {
             background-color: #000;
+            font-family: 微軟正黑體,'新細明體',Arial, Helvetica, sans-serif;
             width: 70%;
             margin: 0px auto;
         }
@@ -188,6 +189,22 @@
             border-top-right-radius: 5px;
             border-bottom-left-radius: 5px;
             border-bottom-right-radius: 5px;*/
+        }
+
+        .spanInner {
+            font-size: 18pt;
+            font-weight: 700;
+            font-style: italic;
+            margin-left: 20px;
+            margin-bottom: 5px;
+            background-color: #eee;
+        }
+        /*IndentationCode*/
+        .IC_div {
+            border: 5px solid #0f0;
+            margin-left: 15px;
+            margin-top: 0px;
+            padding: 5px;
         }
     </style>
 </head>
@@ -467,19 +484,20 @@ a9QBvHW8NRgCaHnz5vHWAIYz2x40rNFm0pcafczcOJgjgBw4cODAgcMTTQcBD88ZPK4mnkTc2XF7pZ5D
                             <div id="dbClick" ondblclick="ondb">
                                 &lt;div id="dbClick" ondblclick="ondb")"&gt;
                                 <br />
-                                <div style="margin-left:0px; margin-bottom:-5px; border:none; padding:unset;">
+                                <div class="IC_div" style="border:none;  margin-bottom: -10px;">
                                     &lt;script&gt;
                                     <br />
-                                    <div style="margin-left:15px; margin-bottom:-5px; border:none; padding:unset;">
+                                    <div class="IC_div" style="border:none;">
 
                                         document.getElementById("dbClick").addEventListener("dblclick", ondb);
                                         <br />
                                         function ondb() {
                                         <br />
-                                        <div style="margin-left:15px; margin-bottom:-15px; border:none; padding:unset;">
+                                        <div class="IC_div" style="border:none; margin-bottom: -20px;">
                                             alert('message');
+                                            <br />
+                                            }
                                         </div>
-                                        }
                                     </div>
                                     &lt;/script&gt;
                                     <br />
@@ -496,42 +514,180 @@ a9QBvHW8NRgCaHnz5vHWAIYz2x40rNFm0pcafczcOJgjgBw4cODAgcMTTQcBD88ZPK4mnkTc2XF7pZ5D
                         <li style="list-style-image:url(tangleItem_10px.png); ">
                             onmousedown 與 onmouseup 建議搭配使用
                         </li>
-                        <li>onmousedown 
-                            <span class="spnaComm">//當滑鼠按下某元素</sapn>
-                            
+                        <li>
+                            onmouseup
+                            <span class="spnaComm">//當滑鼠在某元素中鬆開</span>
                         </li>
                         <li>
-                            onmouseup 
-                            <span class="spnaComm">//當滑鼠鬆開(相對於按下)某元素</span>
+                            onmousedown
+                            <span class="spnaComm">//當滑鼠在某元素中按下</span>
+                            <br />
+                            <span class="spanLi">觸發innerHTML →</span>
+                            <span id="downandUp" class="spanInner"></span>
+                            <div onmousedown="down()" onmouseup="up()" style="width:650px;">
+                                &lt;span ="downandUp"&gt;&lt;/span&gt;
+                                <br />
+                                &lt;div onmousedown="down()" onmouseup="up()"&gt;
+                                <br />
+                                <div class="IC_div" style="border:none;  margin-bottom:auto;">
+                                    &lt;script&gt;
+                                    <br />
+                                    <div class="IC_div" style="border:none; margin-bottom:auto;">
+                                        function down() {
+                                        <br />
+                                        <div class="IC_div" style="border:none;  margin-bottom:-15px;">
+                                            document.getElementById("downandUp").innerHTML = "已按下.";
+                                            <span class="spnaComm">//innerHTML用於存取元素內容</span>
+                                        </div>
+                                        }
+                                        <br />
+                                        function up() {
+                                        <br />
+                                        <div class="IC_div" style="border:none;  margin-bottom:-15px;">
+                                            document.getElementById("downandUp").innerHTML = "已鬆開.";
+                                        </div>
+                                        }
+                                    </div>
+                                    &lt;/script&gt;
+                                </div>
+                                &lt;div&gt;
+                                <script>
+                                    function down() {
+                                        document.getElementById("downandUp").innerHTML = "已按下.";
+                                    }
+                                    function up() {
+                                        document.getElementById("downandUp").innerHTML = "已鬆開.";
+                                    }
+                                </script>
+                            </div>
                         </li>
-                        <li style="list-style-image:url(tangleItem_10px.png); ">
-                             onmouseenter 與 onmouseleave 建議搭配使用
-                        </li>
-                        <li>
-                            onmouseenter  
+                        <!--<li style="list-style-image:url(tangleItem_10px.png); ">
+                            onmouseenter 與 onmouseleave 建議搭配使用
+                        </li>-->
+                        <!--<li>
+                            onmouseenter
                             <span class="spnaComm">//當游標進入某元素</span>
-                        </li>             
-                        <li>
-                            onmouseleave 
-                            <span class="spnaComm">//當游標離開某元素</span>
+                            <span class="spanLi"></span>
+                            <div >
+
+                            </div>
                         </li>
-                        
+                        <li>
+                            onmouseleave
+                            <span class="spnaComm">//當游標離開某元素</span>
+                        </li>-->
+
                         <li style="list-style-image:url(tangleItem_10px.png); ">
                             onmouseout 與 onmouseover 建議搭配使用
                         </li>
                         <li>
-                            onmouseout 
+                            onmouseover
+                            <span class="spnaComm"> //當游標離開某元素</span>
+                        </li>
+                        <li>
+                            onmouseout
                             <span class="spnaComm">//當游標進入某元素</span>
+                            <br />
+                            <span class="spanLi">使用監聽方式觸發innerHTML→</span>
+                            <span id="outOverinner" class="spanInner"></span>
+                            <div id="outandOver" style="width:650px;">
+                                &lt;div id="outandOver"&gt;
+                                <div class="IC_div" style="border:none;  margin-bottom:auto;">
+                                    &lt;script&gt;
+                                    <br />
+                                    <div class="IC_div" style="border:none;  margin-bottom:auto;">
+                                        document.getElementById("outandOver").addEventListener("mouseout", out);
+                                        document.getElementById("outandOver").addEventListener("mouseover", over);
+                                        function out() {
+                                        <br />
+                                        <div class="IC_div" style="border:none;  margin-bottom:-15px;">
+                                            document.getElementById("outOverinner").innerHTML = "out";
+                                        </div>
+                                        }
+                                        <br />
+                                        function over() {
+                                        <br />
+                                        <div class="IC_div" style="border:none;  margin-bottom:-15px;">
+                                            document.getElementById("outOverinner").innerHTML = "over";
+
+                                        </div>
+                                        }
+                                    </div>
+
+                                    &lt;/script&gt;
+                                </div>
+                                &lt;/div id="outandOver"&gt;
+                                <script>
+                                    document.getElementById("outandOver").addEventListener("mouseout", out);
+                                    document.getElementById("outandOver").addEventListener("mouseover", over);
+                                    function out() {
+                                        document.getElementById("outOverinner").innerHTML = "out";
+                                    }
+                                    function over() {
+                                        document.getElementById("outOverinner").innerHTML = "over";
+                                    }
+                                </script>
+                            </div>
+
+
                         </li>
+
+                        <!--<li style="list-style-image:url(tangleItem_10px.png); ">
+                            onmouseenter/onmouseover & onmouseleave/onmouseout的差別在於...over及...out的被指定的父元素中只要有任一子元素被觸發被指定的父元素也會被觸發，且
+                            <strong>被指定的父元素</strong>也會觸發父元素，以此類推就如同一樣會一直泡沫往上;
+                        </li>-->
                         <li>
-                            onmouseover   <span class="spnaComm"> //當游標離開某元素</span>
-                        </li>
-                         <li style="list-style-image:url(tangleItem_10px.png); ">
-                            onmouseenter/onmouseover & onmouseleave/onmouseout的差別在於...enter及...leave游標<strong>必須穿過</strong>指定的元素才會觸發;
-                            ...over及...out則是<strong>不論有無穿過</strong>元素皆會觸發.
-                        </li>
-                        <li>
-                            onmousemove <span class="spnaComm">//
+                            onmousemove
+                            <span class="spnaComm">//當游標在元素中移動</span>
+                            <br />
+                            <span class="spanLi">觸發innerHTML →</span>
+                            <span class="spanLi">
+                                你動了
+                                <span id="moveinner" class="spanInner" style="margin-left:0px;">00</span>次.
+                            </span>
+                            <span style="font-size:12px;">打發時間的小遊戲:挑戰666次</span>
+                            
+                            <span id="moveinner2"></span>
+                            <div id="movediv" onmousemove="move()">
+                                &lt;div id="movediv" onmousemove="move()"&gt;
+                                <br />
+                                    你動了&lt;span id="moveinner"&gt;
+                                    &lt;/span&gt;次.
+                                <div class="IC_div" style="border:none;  margin-bottom:-15px;">
+                                    &lt;script&gt;
+                                    <br />
+                                    var = 0;
+                                    <br />
+                                    function move() {
+                                    <div class="IC_div" style="border:none;  margin-bottom:-15px;">
+                                        document.getElementById("moveinner").innerHTML = x += 1;
+                                    </div>
+                                    }
+                                    &lt;/script&gt;
+                                </div>
+                                &lt;/div&gt;
+                                <script>
+                                    var x = 0;
+                                    function move() {
+                                        if (x >= 555) {
+                                            x = -999999999;
+                                            alert("好玩嗎?,請繼續遊玩至666!");
+                                        }
+                                        if (x == -999999667) {
+                                            alert("騙你的!,不可能到666啦");
+                                            x = 0;
+                                            if (confirm("要使用加速器嗎?")) {
+                                                alert("你休想!哼!");
+                                                x = -1000000001;
+                                            } else {
+                                                alert("不錯!有膽量給你一對翅膀吧!");
+                                                x = -99999;
+                                            }
+                                        }
+                                        document.getElementById("moveinner").innerHTML = x += 1;
+                                    }
+                                </script>
+                            </div>
                         </li>
                     </ul>
                 </div>
